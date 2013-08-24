@@ -1,0 +1,6 @@
+*.img
+initramfs_dir*
+zImage
+initramfs.cpio.gz
+B2G/
+b2g-manifest-m7ul/
