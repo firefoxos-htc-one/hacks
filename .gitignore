@@ -2,5 +2,7 @@
 initramfs_dir*
 zImage
 initramfs.cpio.gz
+newinitramfs.cpio.gz
 B2G/
 b2g-manifest-m7ul/
+logs/
