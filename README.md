@@ -29,21 +29,29 @@ Make these hacks:
 * add "device/htc/m7-common/include" to all LOCAL_C_INCLUDES in device/htc/m7-common/gps/libloc_api_50001/Android.mk
 
 * add fonts to /bootable/recovery/fonts from
-https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/12x22.png
-https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/18x32.png
+   https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/12x22.png
+   https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/18x32.png
+
+* add the following lines to gaia/build/preferences.js (line 162, before function writePrefs() )
+  prefs.push(['layout.css.devPixelsPerPx', '2.5']);
+  prefs.push(['ril.data.enabled', true]);
 
 
 Now:
+export GAIA_DEV_PIXELS_PER_PX=1.5
+export GAIA_OPTIMIZE=1
+export B2G_SYSTEM_APPS=1
 ./build.sh
 
 Running Hacks
 -------------
 * adb push modules to /system/lib/modules (extracted from CyanogenMod 10.2 nightly build, /modules/ directory in this repository)
-* adb push B2G/out/target/product/m7ul/data/local to /data/local
 * Change default.prop persist.sys.usb.config line to: persist.sys.usb.config=mtp,adb
-* Add user_pref("layout.css.devPixelsPerPx", "2.5"); to /data/b2g/mozilla/<profile_id>.default/prefs.js
 
 TODO:
 -----
 * Add all the changes to the build process
 * create update.zip for easy flash with Recovery
+
+
+
