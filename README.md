@@ -32,9 +32,10 @@ Make these hacks:
 
 * add "device/htc/m7-common/include" to all LOCAL_C_INCLUDES in device/htc/m7-common/gps/libloc_api_50001/Android.mk
 
-* add fonts to /bootable/recovery/fonts from
-   https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/12x22.png
-   https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/18x32.png
+* add fonts to bootable/recovery/fonts from
+   cd bootable/recovery/fonts
+   wget https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/12x22.png
+   wget https://raw.github.com/Mahdi-Rom/android_bootable_recovery/jb-4.3/fonts/18x32.png
 
 * add the following lines to gaia/build/preferences.js (line 162, before function writePrefs() )
   prefs.push(['layout.css.devPixelsPerPx', '2.5']);
@@ -42,7 +43,7 @@ Make these hacks:
 
 * external/libpng/Android.mk LOCAL_CLANG = false
 
-Now:cd --..
+Now:
 export GAIA_DEV_PIXELS_PER_PX=1.5
 export GAIA_OPTIMIZE=1
 export B2G_SYSTEM_APPS=1
